@@ -17,7 +17,7 @@ const Page = () => {
       <p className="text-lg font-semibold max-sm:text-lg text-transparent bg-clip-text bg-gradient-to-r from-neutral-600 via-neutral-400 to-neutral-600">
         <span>Developed by </span>
         <Link
-          href={'www.read.cv/judeboachie'}
+          href={'https://www.read.cv/judeboachie'}
           className='underline font-normal text-neutral-700 underline-offset-8 decoration-dotted'
         >
           Jude Boachie
