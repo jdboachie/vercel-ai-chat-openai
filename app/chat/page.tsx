@@ -93,9 +93,6 @@ export default function Chat() {
             </Button>
           )}
         </div>
-        <p className="flex text-neutral-500 text-xs p-2 w-full h-full justify-center items-center max-w-5xl">
-            <kbd>Alt</kbd> + <kbd>Enter</kbd> to submit
-        </p>
       </form>
     </div>
   );
