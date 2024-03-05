@@ -98,10 +98,9 @@
     content: "";
     width: 100%;
     height: 100%;
-    filter: blur(200px) saturate(150%);
+    filter: blur(200px) saturate(100%);
     top: 100dvh;
     opacity: 1;
-
     animation: rotate 30s linear infinite;
 
     @apply w-screen h-screen;
