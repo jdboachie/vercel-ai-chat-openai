@@ -46,7 +46,7 @@ export default function Chat() {
               {m.role === 'user' ? <UserAvatar /> : <AIAvatar /> }
             </div>
             <div className="flex flex-col space-y-2">
-              <p className="text-neutral-500 text-xs">
+              <p className="text-zinc-500 text-xs">
                 {m.role === 'user' ? 'You' : 'AI (gpt-3.5-turbo)'}
               </p>
               <p className="text">
@@ -65,7 +65,7 @@ export default function Chat() {
         ref={formRef}
         onSubmit={handleSubmit}
         className='flex flex-col justify-between items-center fixed bottom-0 left-0 mx-auto w-full max-lg:w-full
-        bg-gradient-to-b from-white via-neutral-50 to-neutral-100
+        bg-gradient-to-b from-white via-zinc-50 to-zinc-100
         '
       >
         <div
@@ -80,14 +80,14 @@ export default function Chat() {
             onChange={handleInputChange}
             placeholder="Message gpt-3.5-turbo..."
             spellCheck={false}
-            className="min-h-[60px] w-full bg-transparent py-4 px-6 border ring-0 focus:ring-2 ring-neutral-500 rounded-3xl text-pretty focus:outline-none focus:ring-offset-2 transition-all duration-300 ease-in-out overflow-hidden resize-none whitespace-pre-wrap sm:text-sm"
+            className="min-h-[60px] w-full bg-transparent py-4 px-6 border ring-0 focus:ring-2 ring-zinc-500 rounded-3xl text-pretty focus:outline-none focus:ring-offset-2 transition-all duration-300 ease-in-out overflow-hidden resize-none whitespace-pre-wrap sm:text-sm"
           />
           {isLoading ? (
             <Button type="submit" variant="outline" size="icon" className={`rounded-full cursor-pointer shadow min-h-14 min-w-14`}>
               <Stop onClick={stop} className="h-5 w-5" />
             </Button>
           ) : (
-            <Button type="submit" disabled={input===""} variant="outline" size="icon" className={`border-neutral-300 rounded-full cursor-pointer min-h-14 min-w-14`}>
+            <Button type="submit" disabled={input===""} variant="outline" size="icon" className={`border-zinc-300 rounded-full cursor-pointer min-h-14 min-w-14`}>
               <PaperPlane className="h-5 w-5" />
             </Button>
           )}
