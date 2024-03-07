@@ -101,7 +101,7 @@
     filter: blur(125px) saturate(70%);
     top: 60dvh;
     opacity: 1;
-    animation: rotate 30s linear infinite;
+    animation: rotate 15s linear infinite;
 
     @apply w-screen h-screen;
   }
