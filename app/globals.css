@@ -98,12 +98,17 @@
     content: "";
     width: 100%;
     height: 100%;
-    filter: blur(200px) saturate(100%);
-    top: 100dvh;
+    filter: blur(125px) saturate(70%);
+    top: 60dvh;
     opacity: 1;
     animation: rotate 30s linear infinite;
 
     @apply w-screen h-screen;
+  }
+
+  .box-gradient {
+    background-size: 100px 100px;
+    background-image: linear-gradient(#e5e7eb 1px, #0000 0), linear-gradient(90deg, #e5e7eb 1px, #0000 0);
   }
 
   @keyframes rotate {
@@ -115,4 +120,47 @@
   .chat-bg-gradient {
     @apply bg-gradient-to-b from-white via-white to-neutral-100;
   }
+
+  /* Style headings */
+  h1 {
+    @apply text-4xl font-bold;
+  }
+
+  h2 {
+    @apply text-3xl font-bold;
+  }
+
+  h3 {
+    @apply text-2xl font-bold;
+  }
+
+  /* Style paragraphs */
+  p {
+    @apply text-base;
+  }
+
+  /* Style lists */
+  ul, ol {
+    @apply list-disc;
+  }
+
+  /* Style links */
+  a {
+    @apply text-blue-500 hover:underline;
+  }
+
+  pre {
+    @apply bg-gray-100 p-4 rounded-lg text-sm font-mono;
+  }
+
+  /* Style code blocks */
+  code {
+    @apply p-1 bg-gray-100 rounded-lg font-mono px-2 text-sm;
+  }
+
+  /* Style blockquotes */
+  blockquote {
+    @apply bg-gray-100 w-full border-l-4 border-gray-600 p-2 my-4;
+  }
+
 }

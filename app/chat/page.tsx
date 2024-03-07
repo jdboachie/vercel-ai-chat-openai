@@ -1,17 +1,17 @@
 'use client';
 
 import React from 'react';
+import html from 'remark-html';
+import { remark } from 'remark';
+import { useChat } from 'ai/react';
+import Error from "@/components/error";
+import Textarea from 'react-textarea-autosize'
 import { Button } from "@/components/ui/button"
+import ChatBlank from "@/components/chat-blank";
 import { PaperPlane, Stop } from "@phosphor-icons/react/dist/ssr";
 import { useEnterSubmit } from '@/lib/hooks/use-enter-submit'
 import { UserAvatar, AIAvatar } from '@/components/avatars';
-import Textarea from 'react-textarea-autosize'
-import { cn } from '@/lib/utils';
-import { useChat } from 'ai/react';
-import { useState, KeyboardEvent, FormEvent } from 'react';
 import ResponseLoadingSkeleton from "@/components/response-loading-skeleton";
-import Error from "@/components/error";
-import ChatBlank from "@/components/chat-blank";
 
 
 export default function Chat() {
@@ -24,8 +24,6 @@ export default function Chat() {
     messages,
     isLoading,
   } = useChat();
-  const [rows, setRows] = useState<number>(1)
-  const [disabled, setDisabled] = useState<boolean>(input==="")
 
   const inputRef = React.useRef<HTMLTextAreaElement>(null)
   const { formRef, onKeyDown } = useEnterSubmit()
@@ -52,7 +50,8 @@ export default function Chat() {
                 {m.role === 'user' ? 'You' : 'AI (gpt-3.5-turbo)'}
               </p>
               <p className="text">
-                {m.content}
+                {/* {m.content} */}
+                <div dangerouslySetInnerHTML={{ __html: remark().use(html).processSync(m.content).toString() }}/>
               </p>
             </div>
           </div>
@@ -70,7 +69,7 @@ export default function Chat() {
         '
       >
         <div
-          className='px-4 overflow-hidden flex w-full max-w-5xl space-x-2 flex-grow p-2 relative'
+          className='px-4 pb-8 pt-2 overflow-hidden flex w-full max-w-5xl space-x-2 flex-grow relative'
         >
           <Textarea
             ref={inputRef}
@@ -88,7 +87,7 @@ export default function Chat() {
               <Stop onClick={stop} className="h-5 w-5" />
             </Button>
           ) : (
-            <Button type="submit" disabled={input===""} variant="outline" size="icon" className={`border-neutral-300 rounded-full cursor-pointer shadow min-h-14 min-w-14`}>
+            <Button type="submit" disabled={input===""} variant="outline" size="icon" className={`border-neutral-300 rounded-full cursor-pointer min-h-14 min-w-14`}>
               <PaperPlane className="h-5 w-5" />
             </Button>
           )}

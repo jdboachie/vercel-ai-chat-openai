@@ -1,0 +1,94 @@
+/* Markdown CSS Styles */
+
+/* Headers */
+h1 {
+  margin: 1em 0;
+}
+
+h1 {
+  @apply text-2xl;
+}
+
+h2 {
+  @apply text-xl
+}
+
+h3 {
+  @apply text-lg;
+}
+
+/* Paragraphs */
+p {
+  margin: 1em 0;
+  @apply text-base leading-7
+}
+
+/* Lists */
+ul, ol {
+  margin: 1em 0;
+}
+
+li {
+  /* Your styles for li tag */
+}
+
+/* Links */
+a {
+  color: #007bff;
+  @apply underline underline-offset-2;
+}
+
+/* Emphasis */
+em {
+  /* Your styles for em tag */
+}
+
+strong {
+  /* Your styles for strong tag */
+}
+
+/* Code Blocks */
+pre {
+  /* Your styles for pre tag */
+}
+
+code {
+  /* Your styles for code tag */
+}
+
+/* Blockquotes */
+blockquote {
+  margin: 1em;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+/* Images */
+img {
+  /* Your styles for img tag */
+}
+
+/* Tables */
+table {
+  /* Your styles for table tag */
+}
+
+th {
+  /* Your styles for th tag */
+}
+
+td {
+  /* Your styles for td tag */
+}
+
+/* Horizontal Rule */
+hr {
+  /* Your styles for hr tag */
+}
+
+code {
+  font-family: 'Courier New', monospace;
+  background-color: #f4f4f4;
+  padding: 5px;
+  border-radius: 3px;
+}
