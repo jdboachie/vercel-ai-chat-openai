@@ -1,7 +1,7 @@
 import './globals.css';
-import { Onest } from 'next/font/google';
+import { Inter } from 'next/font/google';
 
-const inter = Onest({ subsets: ['latin'] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'Chitchat',
